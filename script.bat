@@ -7,6 +7,6 @@ For /f "tokens=1-3 delims=:" %%a in ('echo %otherTime_%') do (set time_=%%a-%%b-
 md %date_%
 cd %date_%
 
-nmap -sP 10.0.0.1/32 > newText.txt
+nmap -sP 10.0.0.1-32 > %time_%.txt
 
 pause
