@@ -38,5 +38,6 @@ for filename in os.listdir(folder):
 
 times, vals = zip(*sorted(zip(times, vals)))
 
-plt.plot(times, vals)
+plt.scatter(times, vals)
+plt.ylim(ymax=700, ymin=0)
 plt.show()
