@@ -1,12 +1,13 @@
-import os
+import os, glob
 import datetime as dt
 import matplotlib.pyplot as plt
 
 #folder = input("Enter date to retrieve (mm-dd-yyyy): ")
-folder = "04-26-2017"
+folder = "04-27-2017"
 
 date = [int(x.strip()) for x in folder.split("-")]
 epoch = dt.datetime.utcfromtimestamp(0)
+morn = dt.datetime(date[2], date[0], date[1])
 
 times = []
 vals = []
@@ -32,8 +33,10 @@ for filename in os.listdir(folder):
         except ValueError:
             continue
 
-    times.append((time-epoch).total_seconds())
+    times.append((time-morn).total_seconds()/3600)
     vals.append(num)
+
+times, vals = zip(*sorted(zip(times, vals)))
 
 plt.plot(times, vals)
 plt.show()
