@@ -27,7 +27,10 @@ for filename in os.listdir(folder):
     with open(folder + "/" + filename + ".txt", "r") as file:
         data = file.readlines()
 
-        num = int([(x.strip())[1:] for x in data[len(data)-1].split()][5])
+        try:
+            num = int([(x.strip())[1:] for x in data[len(data)-1].split()][5])
+        except ValueError:
+            continue
 
     times.append((time-epoch).total_seconds())
     vals.append(num)
