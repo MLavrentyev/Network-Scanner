@@ -1,3 +1,5 @@
+:loop
+
 For /f "tokens=1-2" %%a in ('date /t') do (set newDate_=%%b)
 For /f "tokens=1-3 delims=/" %%a in ('echo %newDate_%') do (set date_=%%a-%%b-%%c)
 
@@ -9,4 +11,7 @@ cd %date_%
 
 nmap -sP 10.0.0.1-32 > %time_%.txt
 
-pause
+timeout /t 10 /nobreak
+
+cd ..
+goto :loop
