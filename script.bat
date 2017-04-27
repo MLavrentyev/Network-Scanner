@@ -9,9 +9,9 @@ For /f "tokens=1-3 delims=:" %%a in ('echo %otherTime_%') do (set time_=%%a-%%b-
 md %date_%
 cd %date_%
 
-nmap -sP 10.0.0.1-32 > %time_%.txt
+nmap -sP 192.168.104.9/21 > %time_%.txt
 
-timeout /t 10 /nobreak
+timeout /t 30 /nobreak
 
 cd ..
 goto :loop
