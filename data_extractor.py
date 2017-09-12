@@ -35,9 +35,9 @@ for folder in folders:
                 num = int([(x.strip())[1:] for x in data[len(data)-1].split()][5])
             except ValueError:
                 continue
-
-        tim.append((time-morn).total_seconds()/3600)
-        val.append(num)
+        if num > 1:
+            tim.append((time-morn).total_seconds()/3600)
+            val.append(num)
     # End looping over files
 
     times.append(tim)
