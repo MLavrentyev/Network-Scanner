@@ -3,7 +3,7 @@ import datetime as dt
 import matplotlib.pyplot as plt
 
 #folders = input("Enter date to retrieve (mm-dd-yyyy): ")
-folders = ["04-27-2017","04-28-2017","05-01-2017"]
+folders = ["09-12-2017"]
 
 
 times = []
